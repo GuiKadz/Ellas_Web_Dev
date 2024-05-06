@@ -41,7 +41,7 @@ export function AccountMenu() {
             className="flex select-none items-center gap-2 bg-purple-800 border-purple-800 hover:bg-purple-600 hover:text-white  h-10"
           >
             {isLoadingProfile ? (
-              <Skeleton className="h-4 w-40" />
+              <Skeleton className="h-4 w-40 bg-zinc-900/10" />
             ) : (
               profile?.institute
             )}

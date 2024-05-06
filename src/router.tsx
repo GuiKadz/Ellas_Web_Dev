@@ -3,12 +3,11 @@ import AppLayout from "@/pages/_layouts/app";
 import { NotFound } from "@/pages/404";
 import { AuthLayout } from "./pages/_layouts/auth";
 import SignIn from "./pages/auth/sign-in";
-import DashboardVictim from "./pages/app/dashboard-victim";
-import DashboardAggressor from "./pages/app/dashboard-aggresor";
-import DashboardOccurencce from "./pages/app/dashboard-occurencce";
+import Dashboard from "./pages/app/dashboard";
 import CreateVictim from "./pages/app/create-victim";
-import CreateAggressor from "./pages/app/create-aggresor";
 import CreateOccurencce from "./pages/app/create-occurencce";
+import Search from "./pages/app/search";
+import RegisterAggressor from "./pages/app/create-aggresor";
 
 export const router = createBrowserRouter([
   {
@@ -18,34 +17,26 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <DashboardVictim />,
+        element: <Dashboard />,
       },
       {
-        path: "/dashboard-victim",
-        element: <DashboardVictim />,
-      },
-      {
-        path: "/dashboard-aggresor",
-        element: <DashboardAggressor />,
-      },
-      {
-        path: "/dashboard-occurencce",
-        element: <DashboardOccurencce />,
+        path: "/dashboard",
+        element: <Dashboard />,
       },
       {
         path: "/search",
-        element: <DashboardVictim />,
+        element: <Search />,
       },
       {
-        path: "/create-victim",
+        path: "/create/victim",
         element: <CreateVictim />,
       },
       {
-        path: "/create-aggresor",
-        element: <CreateAggressor />,
+        path: "/create/aggressor",
+        element: <RegisterAggressor />,
       },
       {
-        path: "/create-occurencce",
+        path: "/create/ocurrence",
         element: <CreateOccurencce />,
       },
     ],

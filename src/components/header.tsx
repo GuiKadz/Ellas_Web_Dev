@@ -1,10 +1,4 @@
-import {
-  FolderPlus,
-  Home,
-  LineChart,
-  Search,
-  UserRoundPlus,
-} from "lucide-react";
+import { FolderPlus, LineChart, Search, UserRoundPlus } from "lucide-react";
 import { NavLink } from "./nav-link";
 import { Separator } from "./ui/separator";
 import { Button } from "./ui/button";
@@ -22,36 +16,7 @@ export default function Header() {
         />
         <Separator orientation="vertical" className="h-10 " />
         <nav className="flex items-center space-x-4 lg:space-x-6">
-          <Popover>
-            <PopoverTrigger className="flex items-center gap-1.5 text-sm font-medium transition-colors hover:text-foreground data-[current=true]:text-foreground">
-              <LineChart />
-              Dashboard
-            </PopoverTrigger>
-            <PopoverContent className="gap-3 grid">
-              <h1 className="font-medium text-md">
-                Você deseja obter qual relatório?
-              </h1>
-              <Separator orientation="horizontal" className="" />
-              <div className="flex gap-3">
-                <NavLink to="/dashboard-victim">
-                  <Button className="hover:bg-purple-700 hover:text-white">
-                    Vitima
-                  </Button>
-                </NavLink>
-                <NavLink to="/dashboard-aggresor">
-                  <Button className="hover:bg-purple-700 hover:text-white">
-                    Agressor
-                  </Button>
-                </NavLink>
-                <NavLink to="/dashboard-occurencce">
-                  <Button className="hover:bg-purple-700 hover:text-white">
-                    Casos
-                  </Button>
-                </NavLink>
-              </div>
-            </PopoverContent>
-          </Popover>
-
+          <NavLink to="/"><LineChart/> Dashboard</NavLink>
           <Popover>
             <PopoverTrigger className="flex items-center gap-1.5 text-sm font-medium transition-colors hover:text-foreground data-[current=true]:text-foreground">
               <UserRoundPlus />
@@ -59,14 +24,14 @@ export default function Header() {
             </PopoverTrigger>
             <PopoverContent className="gap-3 grid">
               <h1 className="font-medium text-md">Você deseja registrar</h1>
-              <Separator orientation="horizontal" className="" />
+              <Separator orientation="horizontal" />
               <div className="flex justify-around">
-                <NavLink to="/create-victim">
+                <NavLink to="/create/victim">
                   <Button className="hover:bg-purple-700 hover:text-white">
                     Vitima
                   </Button>
                 </NavLink>
-                <NavLink to="/create-aggresor">
+                <NavLink to="/create/aggressor">
                   <Button className="hover:bg-purple-700 hover:text-white">
                     Agressor
                   </Button>
@@ -74,7 +39,7 @@ export default function Header() {
               </div>
             </PopoverContent>
           </Popover>
-          <NavLink to="/create-occurencce">
+          <NavLink to="/create/ocurrence">
             <FolderPlus />
             Registrar Caso
           </NavLink>

@@ -5,6 +5,7 @@ import { useLayoutEffect } from "react";
 import { Outlet, useNavigate } from 'react-router-dom'
 
 export default function AppLayout() {
+ 
   const navigate = useNavigate()
 
   useLayoutEffect(() => {
@@ -26,14 +27,14 @@ export default function AppLayout() {
       },
     )
 
+    // Clean up the side effect when the component unmounts
     return () => {
       api.interceptors.response.eject(interceptorId)
     }
   }, [navigate])
 
-
    return(
-    <div className="flex min-h-screen flex-col antialiased bg-zinc-900 text-white">
+    <div className="flex min-h-screen flex-col antialiased bg-zinc-950 text-white">
       <Header />
       <div className="flex flex-1 flex-col gap-4 p-8 pt-6">
         <Outlet />
