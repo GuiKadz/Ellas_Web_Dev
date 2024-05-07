@@ -16,7 +16,9 @@ export default function Header() {
         />
         <Separator orientation="vertical" className="h-10 " />
         <nav className="flex items-center space-x-4 lg:space-x-6">
-          <NavLink to="/"><LineChart/> Dashboard</NavLink>
+          <NavLink to="/">
+            <LineChart /> Dashboard
+          </NavLink>
           <Popover>
             <PopoverTrigger className="flex items-center gap-1.5 text-sm font-medium transition-colors hover:text-foreground data-[current=true]:text-foreground">
               <UserRoundPlus />
@@ -43,6 +45,7 @@ export default function Header() {
             <FolderPlus />
             Registrar Caso
           </NavLink>
+
           <NavLink to="/search">
             <Search />
             Proucurar
