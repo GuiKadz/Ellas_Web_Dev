@@ -1,5 +1,6 @@
 import { DiffereneCard } from "./difference-card";
 import { VictimDataChart } from "./line-chart";
+import { QuantityTotalCard } from "./quantity-total-card";
 import { QuantityTotalInMonthCard } from "./quantity-total-month-card";
 
 export default function Dashboard() {
@@ -11,7 +12,7 @@ export default function Dashboard() {
       <div className="grid grid-cols-3 gap-3">
         <QuantityTotalInMonthCard/>
         <DiffereneCard/>
-        <QuantityTotalInMonthCard/>
+        <QuantityTotalCard/>
       </div>
       <div className="grid-cols-99 grid gap-3">
         <VictimDataChart/>
