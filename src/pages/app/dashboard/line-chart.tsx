@@ -117,7 +117,7 @@ export function VictimDataChart() {
                   />
                 </LineChart>
               </ResponsiveContainer>
-            ) : (
+            ) : dailyDataError ?(
               <div className="flex h-[240px] w-full flex-col items-center justify-center gap-0.5">
                 <span className="text-sm text-muted-foreground">
                   Nenhum resultado encontrado para o período.
@@ -133,7 +133,7 @@ export function VictimDataChart() {
               </div>
             )}
           </>
-        ) : dailyDataError ? (
+        ) :  (
           <div className="flex h-[240px] w-full flex-col items-center justify-center gap-0.5">
             <span className="flex items-center gap-2 text-sm text-red-500 dark:text-red-400">
               <XCircle className="h-4 w-4" />
