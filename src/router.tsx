@@ -5,9 +5,7 @@ import { AuthLayout } from "./pages/_layouts/auth";
 import SignIn from "./pages/auth/sign-in";
 import Dashboard from "./pages/app/dashboard";
 import CreateVictim from "./pages/app/create-victim";
-import CreateOccurencce from "./pages/app/create-occurencce";
 import Search from "./pages/app/search";
-import RegisterAggressor from "./pages/app/create-aggresor";
 
 export const router = createBrowserRouter([
   {
@@ -31,14 +29,7 @@ export const router = createBrowserRouter([
         path: "/create/victim",
         element: <CreateVictim />,
       },
-      {
-        path: "/create/aggressor",
-        element: <RegisterAggressor />,
-      },
-      {
-        path: "/create/ocurrence",
-        element: <CreateOccurencce />,
-      },
+      
     ],
   },
   {
