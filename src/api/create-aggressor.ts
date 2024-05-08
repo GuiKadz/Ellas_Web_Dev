@@ -3,11 +3,11 @@ import { api } from '@/lib/axios'
 export interface CreateAggressorRequest {
   name: string
   cpf: string
-  age: number
+  age: string
   ethnicity: string
   schooling: string
-  substanceAddiction: boolean
-  criminalRecord: boolean
+  substanceAddiction: string
+  criminalRecord: string
 }
 
 export type CreateAggressorResponse = {

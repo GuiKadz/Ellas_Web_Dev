@@ -7,13 +7,6 @@ import { createVictim } from "@/api/create-victims";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -29,10 +22,10 @@ const victimSchema = z.object({
   maritalStatus: z.string(),
   ethnicity: z.string(),
   auxGov: z.string(),
-  childrens: z.boolean(),
+  childrens: z.string(),
   income: z.string(),
   schooling: z.string(),
-  disabled: z.boolean(),
+  disabled: z.string(),
 });
 
 type VictimSchema = z.infer<typeof victimSchema>;
@@ -66,8 +59,8 @@ export default function CreateVictim() {
   const {
     register,
     handleSubmit,
-    formState: { isSubmitting },
     setValue,
+    formState: { isSubmitting },
   } = useForm<VictimSchema>({
     resolver: zodResolver(victimSchema),
   });
@@ -128,6 +121,22 @@ export default function CreateVictim() {
       toast.success("Criamos a vitima.");
     } catch (err) {
       toast.error("Credenciais inválidas");
+      console.log({
+        name,
+        cpf,
+        phone,
+        district,
+        address,
+        age,
+        profession,
+        maritalStatus,
+        ethnicity,
+        auxGov,
+        childrens,
+        income,
+        schooling,
+        disabled,
+      });
     }
   }
   useEffect(() => {
@@ -136,7 +145,7 @@ export default function CreateVictim() {
       setValue("address", address.address);
     }
   }, [address, setValue]);
-
+ 
   return (
     <div className="w-full flex flex-col h-full bg-zinc-950">
       <form
@@ -196,7 +205,7 @@ export default function CreateVictim() {
             <Input
               type="text"
               {...register("address")}
-            autoCorrect="off"
+              autoCorrect="off"
               placeholder="Endereço da vítima"
               className="focus:outline-purple-800 placeholder:font-normal bg-zinc-950 outline-zinc-800 focus:border-purple-700 border-solid focus:border-2 h-12 text-md"
             />
@@ -205,7 +214,6 @@ export default function CreateVictim() {
             <Label className="font-normal m-1">Idade</Label>
             <Input
               {...register("age")}
-              type="string"
               autoCorrect="off"
               placeholder="Idade da vítima"
               className="focus:outline-purple-800 placeholder:font-normal bg-zinc-950 outline-zinc-800 focus:border-purple-700 border-solid focus:border-2 h-12 text-md"
@@ -249,20 +257,17 @@ export default function CreateVictim() {
           </div>
           <div className="w-full mb-10 flex flex-col justify-center">
             <Label className="font-normal m-1">Tem filhos</Label>
-            <Select {...register("childrens")} {...register("childrens").ref}>
-              <SelectTrigger className="p-2 h-12 mx-auto my-auto outline-purple-800 border border-zinc-600 focus:border-none rounded-md focus:outline focus:outline-2">
-                <SelectValue placeholder="Tem filhos" />
-              </SelectTrigger>
-              <SelectContent className="text-white border-zinc-900 bg-purple-800">
-                <SelectItem value="true">Sim</SelectItem>
-                <SelectItem value="false">Não</SelectItem>
-              </SelectContent>
-            </Select>
+            <Input
+              type="text"
+              {...register("childrens")}
+              placeholder="Tem filhos"
+              className="focus:outline-purple-800 placeholder:font-normal bg-zinc-950 outline-zinc-800 focus:border-purple-700 border-solid focus:border-2 h-12 text-md"
+            />
           </div>
           <div className="w-full mb-10 flex flex-col justify-center">
             <Label className="font-normal m-1">Renda</Label>
             <Input
-              type="string"
+              type="text"
               {...register("income")}
               placeholder="Renda da vítima"
               className="focus:outline-purple-800 placeholder:font-normal bg-zinc-950 outline-zinc-800 focus:border-purple-700 border-solid focus:border-2 h-12 text-md"
@@ -279,15 +284,12 @@ export default function CreateVictim() {
           </div>
           <div className="w-full mb-10 flex flex-col justify-center">
             <Label className="font-normal m-1">Deficiência</Label>
-            <Select {...register("disabled")} {...register("disabled").ref}>
-              <SelectTrigger className="p-2 h-12 mx-auto my-auto outline-purple-800 border border-zinc-600 focus:border-none rounded-md focus:outline focus:outline-2">
-                <SelectValue placeholder="Tem deficiência" />
-              </SelectTrigger>
-              <SelectContent className="text-white border-zinc-900 bg-purple-800">
-                <SelectItem value="true">Sim</SelectItem>
-                <SelectItem value="false">Não</SelectItem>
-              </SelectContent>
-            </Select>
+            <Input
+              type="text"
+              {...register("disabled")}
+              placeholder="Possui deficiencia"
+              className="focus:outline-purple-800 placeholder:font-normal bg-zinc-950 outline-zinc-800 focus:border-purple-700 border-solid focus:border-2 h-12 text-md"
+            />
           </div>
         </div>
         <Button

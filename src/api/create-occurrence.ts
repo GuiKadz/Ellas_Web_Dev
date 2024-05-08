@@ -1,11 +1,11 @@
 import { api } from '@/lib/axios'
 
 export interface CreateOccurrenceRequest {
-  date: Date
+  date: unknown
   time: string
   institute: string
   bond: string
-  drugs: boolean
+  drugs: string
   type: string
   victimCpf: string
   aggressorCpf: string

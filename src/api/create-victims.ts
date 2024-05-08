@@ -11,10 +11,10 @@ export interface CreateVictimRequest {
   maritalStatus: string
   ethnicity: string
   auxGov: string
-  childrens: boolean
+  childrens: string
   income: string
   schooling: string
-  disabled: boolean
+  disabled: string
 }
 
 export type CreateVictimResponse = {

@@ -13,7 +13,7 @@ export function DiffereneCard() {
     staleTime: Infinity,
     queryFn: getDifferencePreviousMonth,
   });
-
+  
   const diff = quantityTotalInMonth?.diffFromLastMonth ?? 0
   const total = quantityTotalInMonth?.amount ?? 0
   return (
