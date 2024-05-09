@@ -41,7 +41,7 @@ export default function Header() {
               </div>
             </PopoverContent>
           </Popover>
-          <NavLink to="/create/ocurrence">
+          <NavLink to="/create/occurrence">
             <FolderPlus />
             Registrar Caso
           </NavLink>
