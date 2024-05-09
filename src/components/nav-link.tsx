@@ -5,7 +5,7 @@ export type NavLinkProps = ComponentProps<typeof Link>;
 
 export function NavLink(props: NavLinkProps) {
   const { pathname } = useLocation();
-
+  
   return(
     <Link
     {...props}

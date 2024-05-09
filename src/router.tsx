@@ -7,6 +7,7 @@ import Dashboard from "./pages/app/dashboard";
 import CreateVictim from "./pages/app/create-victim";
 import Search from "./pages/app/search";
 import CreateAggressor from "./pages/app/create-aggressor";
+import CreateOccurence from "./pages/app/create-occurrence";
 
 export const router = createBrowserRouter([
   {
@@ -30,11 +31,14 @@ export const router = createBrowserRouter([
         path: "/create/victim",
         element: <CreateVictim />,
       },
-      {
+      { 
         path: "/create/aggressor",
         element: <CreateAggressor/>
       },
-      
+      {
+        path: "/create/occurrence",
+        element: <CreateOccurence/>
+      }
       
     ],
   },
