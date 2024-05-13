@@ -69,7 +69,7 @@ export default function CreateOccurence() {
         className="flex flex-col items-center h-full"
         onSubmit={handleSubmit(handleAuthenticate)}
       >
-        <h1 className="text-xl text-zinc-300">Criao agressor</h1>
+        <h1 className="text-xl text-zinc-300">Criar agressor</h1>
         <div className="w-4/6 mb-10 grid grid-cols-3 gap-10 mt-3">
           <div className="w-full mb-10 flex flex-col justify-center">
             <Label className="font-normal m-1">Data</Label>

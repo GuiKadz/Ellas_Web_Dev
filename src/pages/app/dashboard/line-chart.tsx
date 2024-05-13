@@ -75,7 +75,7 @@ export function VictimDataChart() {
               <Loader2 className="h-4 w-4 animate-spin text-muted-foreground" />
             )}
           </CardTitle>
-          <CardDescription>Casos diários no período</CardDescription>
+          <CardDescription>Ocorrencias diárias no período</CardDescription>
         </div>
         <div className="flex items-center gap-3">
           <Label>Período</Label>
@@ -89,7 +89,7 @@ export function VictimDataChart() {
       <CardContent className=" flex flex-col justify-center ">
         {dailyDataInPeriod ? (
           <>
-            {dailyDataInPeriod ? (
+            {dailyDataInPeriod.length > 0 ? (
               <ResponsiveContainer width="100%" height={240} className="left-0">
                 <LineChart data={dailyDataInPeriod}>
                   <XAxis

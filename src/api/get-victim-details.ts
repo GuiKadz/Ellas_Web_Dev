@@ -1,9 +1,16 @@
 import { api } from "@/lib/axios";
 
-export async function GetVictimDetails(){
-  const response = await api.get(
-    '/reports/victims',
-  )
+export type GetVictimDetailsResponse = Array<{
+  data: string;
+  count: number;
+}>;
 
-  return response.data
+export async function GetVictimDetails(data: string) {
+  const response = await api.get<GetVictimDetailsResponse>(
+    `/reports/victims/${data}`,
+   
+
+  );
+
+  return response.data;
 }
