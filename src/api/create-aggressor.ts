@@ -2,7 +2,7 @@ import { api } from '@/lib/axios'
 
 export interface CreateAggressorRequest {
   name: string
-  cpf: string
+  document: string
   age: string
   ethnicity: string
   schooling: string
@@ -16,7 +16,7 @@ export type CreateAggressorResponse = {
 
 export async function createAggressor({
   name,
-  cpf,
+  document,
   age,
   ethnicity,
   schooling,
@@ -25,7 +25,7 @@ export async function createAggressor({
 }: CreateAggressorRequest) {
   const response = await api.post('/aggressors', {
     name,
-    cpf,
+    document,
     age,
     ethnicity,
     schooling,

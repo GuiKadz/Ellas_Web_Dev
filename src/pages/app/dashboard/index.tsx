@@ -17,7 +17,7 @@ export default function Dashboard() {
         <DiffereneCard/>
         <QuantityTotalCard/>
       </div>
-      <div className="grid-cols-9 grid gap-3">
+      <div className="grid-cols-10 grid gap-3">
         <VictimDataChart/>
         <DetailsVictimCard/>
       </div>

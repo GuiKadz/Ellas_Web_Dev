@@ -2,8 +2,9 @@ import { api } from '@/lib/axios'
 
 export interface CreateVictimRequest {
   name: string
-  cpf: string
+  document: string
   phone: string
+
   district: string
   address: string
   age: string
@@ -23,8 +24,9 @@ export type CreateVictimResponse = {
 
 export async function createVictim({
   name,
-  cpf,
+  document,
   phone,
+  
   district,
   address,
   age,
@@ -39,7 +41,7 @@ export async function createVictim({
 }: CreateVictimRequest) {
   const response = await api.post('/victims', {
     name,
-    cpf,
+    document,
     phone,
     district,
     address,

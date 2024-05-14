@@ -66,7 +66,7 @@ export function VictimDataChart() {
   console.log(dailyDataInPeriod)
 
   return (
-    <Card className="col-span-6 row-span-1 bg-zinc-950 border-zinc-800 text-white">
+    <Card className="col-span-7 row-span-1 bg-zinc-950 border-zinc-800 text-white">
       <CardHeader className="flex flex-row items-center justify-between pb-8">
         <div className="space-y-1">
           <CardTitle className="flex items-center gap-2 text-base font-medium">

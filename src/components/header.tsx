@@ -1,4 +1,4 @@
-import { FolderPlus, LineChart, Search, UserRoundPlus } from "lucide-react";
+import { FolderPlus, LineChart, UserRoundPlus } from "lucide-react";
 import { NavLink } from "./nav-link";
 import { Separator } from "./ui/separator";
 import { Button } from "./ui/button";
@@ -46,10 +46,7 @@ export default function Header() {
             Registrar Caso
           </NavLink>
 
-          <NavLink to="/search">
-            <Search />
-            Proucurar
-          </NavLink>
+          
         </nav>
         <Separator orientation="vertical" className="h-10 ml-auto" />
         <div className="flex items-center">

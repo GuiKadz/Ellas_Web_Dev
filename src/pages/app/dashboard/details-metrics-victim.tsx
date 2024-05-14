@@ -55,7 +55,7 @@ export function DetailsVictimCard() {
   };
 
   return (
-    <Card className="bg-zinc-950 col-span-3 h-full border-zinc-800 text-white">
+    <Card className="bg-zinc-950 col-span-3 gap-3 h-full border-zinc-800 text-white">
       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
         <CardTitle className="text-base font-semibold">
           Relátorios de Vítimas
@@ -67,9 +67,9 @@ export function DetailsVictimCard() {
         )}
       </CardHeader>
       <CardContent>
-        <div>
+        <div className="gap-10 flex flex-col">
           <Select defaultValue="bairro" onValueChange={(e: string) => handleSelectCategory(e)}>
-            <SelectTrigger>
+            <SelectTrigger className="h-11 mx-auto">
               <SelectValue placeholder="Selecione um dado especifico" />
             </SelectTrigger>
             <SelectContent>
